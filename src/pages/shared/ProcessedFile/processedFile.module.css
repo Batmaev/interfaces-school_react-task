@@ -1,0 +1,26 @@
+.selectedFileContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.selectedFile,
+.processedFile,
+.erroredFile {
+  padding: 15px 27px;
+  border-radius: 10px;
+  font-size: 35px;
+}
+
+.selectedFile {
+  background-color: #cb81ff;
+}
+
+.processedFile {
+  background-color: #d4fae6;
+}
+
+.erroredFile {
+  background-color: #ff5f00;
+  color: white;
+}

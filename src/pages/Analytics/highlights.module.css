@@ -1,0 +1,17 @@
+.promise {
+  font-size: 40px;
+  color: #cb81ff;
+  text-align: center;
+  margin-top: 200px;
+  line-height: 1.4;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 39px;
+  row-gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 100px;
+}

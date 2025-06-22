@@ -1,0 +1,15 @@
+body {
+  background-color: #fce2ff;
+  font-family: Roboto, sans-serif;
+  font-size: 30px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+#root {
+  box-sizing: border-box;
+}
+
+.App {
+  box-sizing: border-box;
+}

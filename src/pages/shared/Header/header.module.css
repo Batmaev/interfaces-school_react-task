@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logos img {
+  height: 59px;
+  width: 268px;
+}
+
+.productName {
+  background-color: #cb81ff;
+  padding: 5px;
+}

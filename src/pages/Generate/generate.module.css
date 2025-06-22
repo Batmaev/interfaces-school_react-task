@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.buttonStart {
+  padding: 15px 27px;
+  border-radius: 25px;
+  font-size: 35px;
+  cursor: pointer;
+  border: none;
+  margin: 20px auto;
+  display: block;
+  background-color: #2ae881;
+  font-weight: 500;
+}
+
+.errorMessage {
+  color: #ff5f00;
+}

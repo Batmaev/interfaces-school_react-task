@@ -1,0 +1,11 @@
+.clearFileButton {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.clearFileButton img {
+  width: 70px;
+  height: 70px;
+}
