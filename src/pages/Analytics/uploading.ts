@@ -53,12 +53,9 @@ export async function uploadFile(file: File, store: CurrentFileState) {
   }
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({}));
     store.setStatus('error');
     useHistoryStore.getState().addHistoryItem(file.name, false, null);
-    throw new Error(
-      errorData.error || `HTTP error! status: ${response.status}`
-    );
+    return;
   }
 
   const decoder = new TextDecoder();
