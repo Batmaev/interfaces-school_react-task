@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { vi, describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import FileInput from '../FileInput';
 import * as uploading from '../uploading';
@@ -41,17 +41,26 @@ describe('CSV Аналитик', () => {
 
 
   it('если выбрать файл через drag&drop, то он отправляется в store', async () => {
-    const user = userEvent.setup();
     const mockStore = createMockStore();
 
     vi.spyOn(uploading, 'useCurrentFileStore').mockReturnValue(mockStore);
 
     render(<FileInput />);
-    const fileInput = screen.getByLabelText('Загрузить файл');
-    expect(fileInput).toBeInTheDocument();
+    const dropZone = screen.getByText('или перетащите сюда').parentElement!;
+    expect(dropZone).toBeInTheDocument();
 
     const file = new File(['test,data'], 'test.csv', { type: 'text/csv' });
-    await user.upload(fileInput, file);
+    const data = {
+      dataTransfer: {
+        files: [file],
+        items: [],
+        types: ['Files'],
+      },
+    };
+
+    fireEvent.dragEnter(dropZone, data);
+    fireEvent.dragOver(dropZone, data);
+    fireEvent.drop(dropZone, data);
 
     expect(mockStore.setFile).toHaveBeenCalledWith(file);
   });
